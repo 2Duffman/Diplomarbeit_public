@@ -1,0 +1,8 @@
+removed_scraped = ['alt_name', 'game_type', 'description', 'designer', 'artist', 'publisher', 'url', 'official_url', 'image_url', 'image_file', 'image_blurhash', 'video_url', 'rules_url', 'rules_file', 'review_url', 'external_link', 'list_price', 'min_players_rec', 'max_players_rec', 'min_players_best', 'max_players_best', 'max_age', 'min_age_rec', 'max_age_rec', 'category', 'mechanic', 'cooperative', 'compilation', 'compilation_of', 'family', 'expansion', 'implementation', 'integration', 'rank', 'add_rank', 'num_votes', 'stddev_rating', 'bayes_rating', 'worst_rating', 'best_rating', 'easiest_complexity', 'hardest_complexity', 'lowest_language_dependency', 'highest_language_dependency', 'freebase_id', 'wikidata_id', 'wikipedia_id', 'dbpedia_id', 'luding_id', 'spielen_id', 'published_at', 'updated_at', 'scraped_at'
+                   ]
+removed_paper = ["add_rank","bayes_rating","best_rating","compilation","category (raw)","cooperative (duplicate)","designer (raw)","dbpedia_id","expansion","easiest_complexity","family (raw)","freebase_id","game_type (raw)","hardest_complexity","highest_language_dependency","implementation","integration","luding_id","lowest_language_dependency","max_age","max_age_rec","max_players_best","max_players_rec","mechanic (raw)","min_age_rec","min_players_best","min_players_rec","num_votes","publisher (raw)","rank","scraped_at","spielen_id","stddev_rating","updated_at","wikidata_id","wikipedia_id","worst_rating","lowest_language_dependency","published_at"]
+
+difference = set(removed_scraped) - set(removed_paper)
+print("The following columns are in scraped but not in paper:")
+for col in difference:
+    print(col)

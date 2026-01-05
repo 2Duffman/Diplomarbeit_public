@@ -1,0 +1,9 @@
+data_1 has removed the 'family' column but added boolean columns for all important info from the family column
+data_2 has removed the 'game_type' column but added boolean columns for all keywords in there
+data_3 has removed the 'designer' column but added boolean columns for the top designers and bins for the rest
+data_4 has removed the 'publisher' column but added boolean columns for the top publishers and bins for the rest
+data_5 has removed the 'category' column but added boolean columns for all categories in there
+data_6 has removed the 'mechanic' column but all mechanics have been added individually or as bundles.
+data_7 has linked the 'implementation' avg rating and removed the following columns: 'compilation', 'expansion', 'implementation', 'integration', 'rank', 'add_rank', 'num_votes','stddev_rating','bayes_rating','worst_rating','best_rating','easiest_complexity','hardest_complexity','freebase_id','wikidata_id','wikipedia_id','dbpedia_id','luding_id','spielen_id','published_at','updated_at','scraped_at','min_players_best','max_players_best','lowest_language_dependency','highest_language_dependency'
+data_8 has added the 'min_players_rec_diff' and 'max_players_rec_diff' columns and removed the following columns:'min_players_rec', 'max_players_rec', 'min_age_rec', 'max_age_rec', 'max_age'
+data_9 has reordered the columns. it will become the new data.csv and i will have another data_no_bool.csv that does not include the boolean columns

@@ -1,0 +1,26 @@
+import pandas as pd
+from data_cleaning import convert_to_list
+data = pd.read_csv('./code/Data Preparing/data_6.csv')
+import numpy as np
+
+# Precompute a mapping from bgg_id to avg_rating
+ratings_dict = data.set_index('bgg_id')['avg_rating'].to_dict()
+
+# Define a function to compute the average rating for a given row's implementation list
+def compute_impl_avg(impl_ids):
+    if not impl_ids:  # if the list is empty
+        return np.nan
+    # Lookup ratings for each id that is present in the dataset
+    ratings = [ratings_dict.get(game_id) for game_id in impl_ids if ratings_dict.get(game_id) is not None]
+    if ratings:
+        return sum(ratings) / len(ratings)
+    else:
+        return np.nan
+
+# Create the new column by applying the function on the 'implementation' column
+data['implementation'] = data['implementation'].apply(convert_to_list)
+data['implementation_avg_rating'] = data['implementation'].apply(compute_impl_avg)
+
+
+# Save the updated data to a new CSV file
+data.to_csv(f'./code/Data Preparing/data_linked_impl.csv', index=False)
